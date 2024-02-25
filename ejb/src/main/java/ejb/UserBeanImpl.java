@@ -10,11 +10,6 @@ public class UserBeanImpl implements UserBean {
     }
 
     public String getDetails() {
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         return "This is getDetails() method";
     }
 }

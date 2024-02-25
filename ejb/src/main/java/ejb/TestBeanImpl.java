@@ -1,21 +1,23 @@
 package ejb;
 
 import core.TestBean;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import jakarta.ejb.Stateless;
 
 @Stateless
 public class TestBeanImpl implements TestBean {
-    public TestBeanImpl() {
+    @PostConstruct
+    public void m() {
         System.out.println("TestBeanImpl()");
     }
 
     @Override
     public void test() {
-        try {
-            Thread.sleep(1000);
-        }catch (InterruptedException e){
-            e.printStackTrace();
-        }
         System.out.println("Test");
+    }
+    @PreDestroy
+    public void m1() {
+        System.out.println("preDestroy...");
     }
 }
